@@ -53,7 +53,8 @@ def logout():
     flash('Logged out', 'info')
     return redirect(url_for('app.home'))
 
-@app.route('/users')
-def users():
+
+@app.route('/stats')
+def stats():
     count = User.query.count()
-    return render_template('users.html', user_count=count)
+    return render_template('stats.html', user_count=count)
